@@ -6,7 +6,7 @@
 | Integrante | Usuario de GitHub | Ejercicios |
 | --- | --- | --- |
 | Ivan Morales Salgado | ivnmorales | 215, 179 |
-| [tu nombre] | caarteagag | 743, 1584 |
+| Carlos Andres Arteaga | caarteagag | 743, 1584 |
 
 
 ## 215. Kth Largest Element in an Array
@@ -49,7 +49,7 @@ Espacio: O(n), porque se crean arreglos auxiliares durante el ordenamiento, cons
 
 Problema: https://leetcode.com/problems/network-delay-time/
 
-Autor: [tu nombre] (`caarteagag`)
+Autor: Carlos Andres Arteaga (`caarteagag`)
 
 Familia: Grafos (Dijkstra)
 
@@ -67,7 +67,7 @@ Espacio: O(n + m), por el grafo de adyacencia, el heap y el diccionario de dista
 
 Problema: https://leetcode.com/problems/min-cost-to-connect-all-points/
 
-Autor: [tu nombre] (`caarteagag`)
+Autor: Carlos Andres Arteaga (`caarteagag`)
 
 Familia: Grafos (árbol de recubrimiento mínimo)
 
