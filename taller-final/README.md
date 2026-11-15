@@ -6,6 +6,7 @@
 | Integrante | Usuario de GitHub | Ejercicios |
 | --- | --- | --- |
 | Ivan Morales Salgado | ivnmorales | 215, 179 |
+| [tu nombre] | caarteagag | 743, 1584 |
 
 
 ## 215. Kth Largest Element in an Array
@@ -43,3 +44,39 @@ Tiempo: O(n log n) comparaciones, porque se utiliza Merge Sort. Cada comparació
 Espacio: O(n), porque se crean arreglos auxiliares durante el ordenamiento, considerando que cada número tiene una cantidad limitada de dígitos.
 
 ![Accepted 179](evidencias/largest-number-accepted.png)
+
+## 743. Network Delay Time
+
+Problema: https://leetcode.com/problems/network-delay-time/
+
+Autor: [tu nombre] (`caarteagag`)
+
+Familia: Grafos (Dijkstra)
+
+Idea: Modelé la red como un grafo dirigido y ponderado (cada arco u → v tiene peso w). Desde el nodo k corro Dijkstra con un min-heap de distancias tentativas: siempre saco el nodo con menor tiempo acumulado, lo cierro y relajo sus arcos. Si algún nodo nunca se cierra, la señal no llega a todos y devuelvo -1; si todos se cierran, la respuesta es la mayor distancia final, porque hay que esperar al nodo que más tarda.
+
+Complejidad:
+
+Tiempo: O((n + m) log n), con n nodos y m = `times.length` arcos. Cada arco puede generar una entrada en el heap, y cada operación del heap cuesta O(log m), que es O(log n) porque m ≤ n².
+
+Espacio: O(n + m), por el grafo de adyacencia, el heap y el diccionario de distancias.
+
+![Accepted 743](evidencias/network-delay-time-accepted.png)
+
+## 1584. Min Cost to Connect All Points
+
+Problema: https://leetcode.com/problems/min-cost-to-connect-all-points/
+
+Autor: [tu nombre] (`caarteagag`)
+
+Familia: Grafos (árbol de recubrimiento mínimo)
+
+Idea: Usé Prim sobre el grafo completo, donde el costo de unir dos puntos es la distancia de Manhattan. Empiezo el árbol en el punto 0 y guardo para cada punto fuera del árbol el costo mínimo de conectarlo. En cada paso elijo el punto fuera del árbol con menor costo, lo agrego (sumando ese costo) y actualizo los costos de los demás puntos con la distancia al nuevo punto. Al final la suma es el costo mínimo para conectar todos.
+
+Complejidad:
+
+Tiempo: O(n²), con n = `points.length`. Como el grafo es completo (Θ(n²) aristas), en cada uno de los n pasos se recorren los n puntos para buscar el mínimo y actualizar costos.
+
+Espacio: O(n), por los arreglos de costos y de puntos dentro del árbol.
+
+![Accepted 1584](evidencias/min-cost-to-connect-all-points-accepted.png)
