@@ -18,6 +18,7 @@ public class LongestIncreasingSubsequence {
             //nums[i] can extend any subsequence that ends before it on a smaller value
             for(int j = 0; j < i; j++){
                 if(nums[j] < nums[i]){
+                    //it either keeps the previous length or extends it by 1 if it found a larger element
                     dp[i] = max(dp[i], 1 + dp[j]);
                 }
             }
@@ -25,7 +26,7 @@ public class LongestIncreasingSubsequence {
         return dp;
     }
 
-    //The longest subsequence may end at any index, not only the last one
+    //Search for the largest value in the dp table
     private int largest(int[] dp){
         int best = 0;
         for(int length : dp){
